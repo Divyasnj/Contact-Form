@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTACT FORM</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            box-sizing:border-box;
+
+        }
+        body{
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background:linear-gradient(#fc915c,#e5a244);
+        }
+        .contact-container{
+            height:100vh;
+            display:flex;
+            align-items:center;
+            justify-content:space-evenly;
+
+        }
+        .contact-left{
+            display:flex;
+            flex-direction:column;
+            align-items: start;
+            gap:30px;
+        }
+        .contact-left-title h2{
+            font-weight: 600;
+            color:#331ad7;
+            font-size:40px;
+            margin-bottom:5px;
+        }
+        .contact-left-title hr{
+            border:none;
+            width:120px;
+            height:5px;
+            background-color:#331ad7;
+            border-radius:10px;
+        }
+        .contact-inputs{
+            width:400px;
+            height:50px;
+            border:none;
+            outline:none;
+            padding-left:25px;
+            font-weight:600;
+            color:#666;
+            border-radius:50px;
+
+        }
+        .contact-left textarea{
+            height:140px;
+            padding-top:25px;
+            border-radius:20px;
+        }
+        .contact-inputs:focus{
+            border:2px solid #c7334f;
+        }
+        .contact-inputs::placeholder{
+            color:#a9a9a9;
+        }
+        .contact-left button{
+            display:flex;
+            align-items:center;
+            padding:15px 30px;
+            font-size:16px;
+            color:#fff;
+            gap:10px;
+            border:none;
+            border-radius:50px;
+            background:linear-gradient(270deg,#a4d321,#331ad7);
+            cursor:pointer;
+        }
+        .contact-left button img{
+            height:30px;
+        }
+        .contact-right img{
+            width:400px
+        }
+        @media(max-width:600px)
+        {
+            .contact-inputs{
+                width:80vw;
+
+            }
+            .contact-right{
+                display:none
+            }
+        }
+    </style>
+</head>
+<body>
+     <div class="contact-container">
+        <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
+            <div class="contact-left-title">
+                <h2>Get in touch</h2>
+                <hr>
+
+            </div>
+            
+            <input type="hidden" name="access_key" value="4bbf8bbe-1915-4487-b235-66a41675a780">
+            <input type="text" name="name" placeholder="your name" class="contact-inputs" required>
+            <input type="email" name="email" placeholder="your email" class="contact-inputs" required>
+            <textarea name="message" placeholder="your suggestion" class="contact-inputs" required></textarea>
+            <button type="submit">Submit<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAMAAABC4vDmAAAAe1BMVEX////j5/JCjf+kwvc9i/+nxPc4if/m6fI0h/8uhf/o6vGqxvcog/+gwPedvvhmn/xNkv7z+P98q/tSlf5dmv3u7vH4+//A0vXY4PNzpvtuo/zv9P+QtvmCrvrm7v7c4/KOtv8df//M2fTa5v7S4v+2z/+90/7L3f+avf48kAOQAAAK/UlEQVR4nO1b24KiOhBcIQnhjoAoCAyO1///wpPOBQKK4sjunAfq4eyeHWcsqy/VHTJ//ixYsGDBggULFixYsGDBggX/EOtT9tsUdGT11c2Nw8G7/jYTheO5CiNKCTIMlPw2mT9/6tO5Sb2DDXwkfpfQftvkiUFpx4eBVL9G53j1C3LwCOoR4qROv0EoOwVxGhF6R4cDpet/TKe+nuPo4NF7fVrQ4F8SOrpVGqFeAhFyT8qr/w2f/el8C4mnF5iBiEejqgz1wIno/XU6GQtYWUT9AkPQjpLqXO8vhc4pjNh/7fPfJXS8BHlke319bI+GDb7u2Qsuhdd9CaE4gD+jvxY9pk9QJAahGiFEQJ/cPO25uWXXsKdeVLo5tPP4rxCqr2aVkoNeYAhRz4ti/1oLs82yrKcSK7nQx37C/uUwt/Gt98cza9CIDBLISMLbdi+7T7a3HGsb6jFlMlXYxCUB+rMSOp1ZJXke6ifQgRTl5aT4bDbWamVttrnda1M03bqm6YbsH2k5D51sX18a1oBIL2AsgaKUFZgcjrIM+DBYq23R75yINKtv3zR9/j9zWEzNCizx+gXGEogyPldVRtnGEYRApe940DCR4W4s1zdxBWkefjbhrVmBsQmIkJ4+LIFSVmCte2VrZ9XCsr7zob+QcOdYX0woM2Vfsc2fE9pffVZgHh3o4xl5cD22n3WzsVYamEoVIiqz5Z/2jQXU2jJSvEl5+5/pc2IFRkEgvcBsIy1ul+4nZuseH6GSChxCSShI0WS7gS9CmsfsiyR/n9ERNyxg9rBD2yErsI7Q2nFWQ1ibXWVIlUjU5OJvNgsdfHHHgucmQPIti9kfWYExgxjoQ5KiOWu20MsgjZKzq6gKXFIFiXBeYsoCYNHDJfxTMjl69aXMU2QPE+hgVOdT3RULq/lhyCQ2VhNRqZIRs7dH4q9b9QmYUBgshkyxGDayBqE9GMmITY2w8vXtLFvvH9MBOLumVSmKXTMU/EiuomzxJgVJ5h1fEGIjKxvJqD3Ux4MC0+ZVrQk9VMkpE6USygNXhc4zW12tiy8tJhpvUll9cmM00IclEEpz5mD6C7OHGaSr9BUQqlTKsYtjkZQ03G3aF+0wS3NoUtQfYXR0mzAhtt50WUe07bS8HHuEngskKDlBqigxlTA2Q/ExafzVfRwePd6kjHuLqU+XMrUP3rDAIlZgvVizDHrJh6tkGjL4KCpM11QZjozzRnudxZoUjrnFDAhtyyJB/Q5NKKVJ3CuwaQKJt7JwKn8cQmGA5RtDaqXfvah3FuNq73MukHefQGFlXnv7V5ZNEkiotHIjRckoAtAiSIn4rGX/Y4HF4ABeS7W3C+z+yEpYwIJr3Se0niiQeB/nnBJNJZCpiVTohsUBFsOblL6sdwJRz07i26U/uGf3NvZKpXNqd5TYezLkonJosRty2kH0wGLIVnvXUFVaVF7rfb9TTM0gTSVrmyJFKb2BSiw6sjkhGAkGr1cWgxI9NsfElqwqrSSzERt7Qcm5hJ1KpVDJraSvyJGgDyYULqBJNT051jfp36zlitBlbwukVAo1lUxQycR+Lquu2N3/VN6kTPjyncXsSySaHLWbY/YjQqDSVi1yiKSli4VMgcxw4j/6pNYFioDCsn5vMfvYkLSMeDfm9k8pWd+aSqVQib2hCl26fZgNYDEYmhR5OAcf1cRDULN7EPsXKn3nnUoNVpT8QlZdvHo8aEH0bvzbRgaEYyEnaBKVX+9kOd8H2km3USqZ+CZDh9wR8R1lMaR4zInhGopVGtEksKbSgq1JUaJJhVtKyldo+D2mPFgMhn5hX0ZJAS0q8zIxHyt+r1LcqdRRAl+RMlWjOSq2GEjz6OkcnF0ipVbobl7RYvtAo/YBGmmUTLcUoSPkzlc0oVqLaZ5xArhyCGIpe3laiCy9G9LuA7FGCZtdc3rywcBiApiDyeujlr1PFK18uxmltfkq263JiH3X7GRSI4Fd3vmKBgfm4AbYP5mDtSCWcv1AtNg+VsvZlWq6YPuAplLXnFD0uDm18NVRy8Tz4LrxVNuqdvdqOaug25ryoEcJy9DZT0OnLIZPUq+2mC6IsfQeQqrvvkU4u6DNpSg3dUqsOcmRwAheOShYTAVbTP7GUctRti1WWOWqazWOZSbaPuDqlLqR4FXoWO09t5hxWoXMG4oCGQvnC7dbk5H7fUrYl9MZiZ9luIheu6yjNx97ZNdEqZX6bKV1HDdRgUPFQKVuJKDBa1PnFpM/t5hRXOVwi+zI3bnt1mTcUWIuJmVKR31FAzQplxfET86D1xdDeU876ZLwhoeUfLlq2vHXhNlHRA/SfPpRSx+uHJnRWOCg6tRhymXS4AMWg+FjkNvPOLH+0PYAUKnEQ5mYhalp7nvaeNFaDP3gPHgtlYB94I4Svim/bMZtqQduMfw8OPo5J4Y65Y9O7lViuaGmue3kSdqURy322FHLRJg2NKB7mUw19ObPfUWDOCjj3/bhQ6urB9G7awTtNFe+sXFA9KCDoPjD+xo15E00IIWb1lfeWDe+2Hf6/Dz42Rw8BXuwWtK3X7NA74ZORY9bDPn0YkuW89lHY+WqkQC9HAl6AItxIRMnnQc/BzRgWmlTb3tKMLE5KaGgSWHjwyYlcebDT7ewVKI52dVba6K0mAZ+WPpDi9Fw4kt/FzwZu3Jiw2wBFmO+Mwc/wxqUSfy2F0jjicw3Tx9ai5nlXgRv3Lc2eupYkhneW2nOLYbMdS8CCgaV6vgibM9KWeN88OhqFCr03iz3IoKe0YjYqYPolzO5AjQpHIDFzHMv4mp3RoNL3uCDnMgJ8Dbp8GElLWa+exFH/lhHHmVC9FCBVQOdssBwtBYz04VAYTTS/aB8EFxyMOXTaoSqCZnFo1fCN9izcNKNRmxHRiCaQyvW+WV3gMf9s96L+ANtmDacFM+KVOaXH6vMql5kFn9gjOHFE45apgFDTy84Ex7J1ghdOVWxJd99voduZ7oX0eHEyw9Y8JpGgTbExHL/IvlTK1RbjD3b1bu1B0YTtNHrz1byKhsTa/xEcdfei5jvijCoEQXyZEKbGASrRG1h8ZhYztZ//MjxE8CgCUbD/dQoewdT8sknFwuNmDQctfB7EeTTOVjDjXKjEWYcaZwwljeQ1GH8w/mYN6kbvC6Z8erdlXKjwaKdd0uEK58yGnbsI/kMNHhQhmAxxfCR46c48k/pcjOmbfTgUZUYjNEFtlZ5BBjeTclwms8t5jDn/eAa2hNyS27y7binNmQvFkHBUiw0MOnuqOWzZX2AjGvv83wPVdEV6sClnY9q+eSChFt9zbHcN8+DJwLOvVGVSDPuZVOubwFn8awO2beuO3CLEUP05PPgSTDhvVLeEPhtA7/QsklHLQctNtG03aG1mB+cKD7DST1xRonLZRLZ41X3JX4WR+2ItisYVCs/apn5fvD6oPpj7HYyRQ/fZS9nB5JcILOExaB5LUaAKqUC9aTK8PKxTniVYtnVbsPvJLlwQ2H+X2KQOwxKAykTNZ44xr5UmXW2VljOq717EbPgJqVKk35vGsNFHOIiGm+xuhfx+bI+fBOV6Rw0em2sjbqiFMt7EXPNwR1OSOPkFVN89Rh5MuS3SVfv3kedtJRGiu4eman2HWOuZX3wBgV6SyaBU+q1Ef/gfvAoGjI5m3SY6tnuX/klBlF+XvFuZhxDLtbcFiPgem9kUw/cd7zZmxQgSw6H9GchqPPD4QcXqSfh+POarv/R7zQtWLBgwYIFCxYsWLBgwYL/M/4DuI2/6MNtQH4AAAAASUVORK5CYII=" height="20px"></button>
+      </form>
+        <div class="contact-right">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmXCyFb6VgeTAMbflihDUdEnpidmta9ySIJQ&s">
+        </div>
+     </div>
+     
+</body>
+</html>
