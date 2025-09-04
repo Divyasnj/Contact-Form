@@ -140,7 +140,7 @@ Textarea is taller to allow longer messages.
 Media query adapts the form layout on mobile devices.
 
 3. Focus & Placeholder Styling
-  
+```css  
 /* Highlight active input */
 .contact-inputs:focus {
     border: 2px solid #c7334f;
@@ -150,7 +150,7 @@ Media query adapts the form layout on mobile devices.
 .contact-inputs::placeholder {
     color: #a9a9a9;
 }
-
+```
 
 
 ✅ Core logic explanation:
