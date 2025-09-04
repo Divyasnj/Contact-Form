@@ -69,8 +69,19 @@ If asked about this project in an **interview**, you can highlight:
    git clone https://github.com/Divyasnj/contact-form.git
 
 
-   🔑 Core Logic Code
-1. Form Submission with Web3Forms
+
+
+
+# 📬 Contact Form with Web3Forms
+
+A responsive **Contact Form** built using **HTML, CSS**, and integrated with **Web3Forms API** for handling submissions securely without a custom backend.
+
+---
+
+## 🔑 Core Logic
+
+### 1. Form Submission with Web3Forms
+```html
 <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
     <!-- API Key (hidden for security) -->
     <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
@@ -83,19 +94,12 @@ If asked about this project in an **interview**, you can highlight:
     <!-- Submit Button -->
     <button type="submit">Submit</button>
 </form>
+```
 
 
-✅ Core logic:
 
-action="https://api.web3forms.com/submit" → sends data directly to Web3Forms server.
 
-method="POST" → ensures data is sent securely.
-
-input type="hidden" with access_key → authenticates the request.
-
-required → enforces HTML5 form validation (no empty fields).
-
-2. Responsive Design with Media Queries
+```css
 /* Input field styling */
 .contact-inputs {
     width: 400px;
@@ -123,17 +127,20 @@ required → enforces HTML5 form validation (no empty fields).
         display: none; /* Hide image on mobile */
     }
 }
+```
 
 
-✅ Core logic:
 
-Inputs styled for clarity.
+✅ Core logic explanation:
 
-Textarea taller for longer messages.
+Inputs styled for clarity and consistency.
 
-Media query makes form adapt to smaller devices.
+Textarea is taller to allow longer messages.
+
+Media query adapts the form layout on mobile devices.
 
 3. Focus & Placeholder Styling
+  
 /* Highlight active input */
 .contact-inputs:focus {
     border: 2px solid #c7334f;
@@ -145,8 +152,15 @@ Media query makes form adapt to smaller devices.
 }
 
 
-✅ Core logic:
 
-Visual feedback when a user clicks inside a field.
+✅ Core logic explanation:
 
-Improves UX & accessibility.
+Adds visual feedback when a user clicks inside a field.
+
+Improves user experience (UX) and accessibility.
+
+📌 Interview Answer Example
+
+If asked “What’s the core logic of your contact form project?” →
+
+“The form uses Web3Forms API for submission. The hidden access_key authenticates requests, and data is sent securely via a POST request. HTML5 validation (required) ensures users cannot submit empty fields. On the frontend, I styled inputs with CSS, added responsive media queries, and focus/placeholder styles to improve usability. The logic is lightweight but scalable—later it can be extended with a backend if needed.”
